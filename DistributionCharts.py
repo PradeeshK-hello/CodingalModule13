@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns 
+data = pd.read_csv("FuelConsumption.csv")
+data.head()
+data.isnull().any()
+data.info()
+sns.boxplot(data=data)
+plt.show()
+sns.boxplot(x=data["CO2EMISSIONS"],y=data["FUELTYPE"])
+plt.show()
+sns.boxplot(x=data["CO2EMISSIONS"],y=data["VEHICLECLASS"])
+plt.show()
+sns.violinplot(x=data["CO2EMISSIONS"],y=data["FUELTYPE"])
+plt.show()
+sns.violinplot(x=data["CO2EMISSIONS"],y=data["VEHICLECLASS"])
+plt.show()
+sns.kdeplot(data=data)
+plt.show()
+sns.histplot(data=data)
+plt.show()
+sns.distplot(data=data.skew())
+plt.show()
